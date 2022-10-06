@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Score;
+use App\Models\Leaderboard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
-class ScoreController extends Controller
+class LeaderboardController extends Controller
 {
     protected function update(Request $request)
     {
         $validation =  Validator::make($request->input(), [
-            'username' => ['required', 'string', 'exists:scores,username'],
+            'username' => ['required', 'string', 'exists:leaderboard,username'],
             'words_per_minute' => ['required', 'integer', 'max:200']
         ]);
 
@@ -24,7 +24,7 @@ class ScoreController extends Controller
             ], 406);
         }
 
-        $score = Score::where('username', Str::lower($request->get('username')));
+        $score = Leaderboard::where('username', Str::lower($request->get('username')));
         $score->update([
             'words_per_minute' => $request->get('words_per_minute')
         ]);
@@ -45,8 +45,8 @@ class ScoreController extends Controller
             ], 406);
         }
 
-        if (Score::where('username', $request->get('username'))->get()->count() == 0) {
-            Score::create([
+        if (Leaderboard::where('username', $request->get('username'))->get()->count() == 0) {
+            Leaderboard::create([
                 'username' => Str::lower($request->get('username'))
             ]);
         }
@@ -55,7 +55,7 @@ class ScoreController extends Controller
 
     protected function leaderboard()
     {
-        $scores = Score::orderBy('words_per_minute', 'desc')->get()->take(5);
+        $scores = Leaderboard::orderBy('words_per_minute', 'desc')->get()->take(5);
         return response()->json([
             'scores' => $scores
         ]);

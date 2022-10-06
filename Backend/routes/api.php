@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\ScoreController;
+use App\Http\Controllers\API\LeaderboardController;
 use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::controller(ScoreController::class)->group(function() {
+Route::controller(LeaderboardController::class)->group(function() {
     Route::get('/leaderboard', 'leaderboard')->name('score.leaderboard');
     Route::put('/update-score', 'update')->name('score.update');
     Route::post('/create-score', 'create')->name('score.create');

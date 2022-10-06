@@ -1,6 +1,6 @@
 const apiEndpoint = "http://localhost:8000/api/";
 const username = window.localStorage.getItem("username");
-const timerLimit = 60;
+const timerLimit = 10;
 var typedText = "";
 var wordsPerMinute = 0;
 
