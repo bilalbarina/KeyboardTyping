@@ -32,19 +32,19 @@
 <body>
 
 	<div class="container flex justify-center items-center pt-28">
-			<div class="w-full flex flex-col justify-center items-center border border-black rounded-md shadow-md py-16 pb-28 max-w-xl">
-				<div class="mx-auto">
-					<img src="./assets/images/login.svg" alt="" width="150px">
-				</div>
-
-				<div class="mt-16 w-full px-24">
-					<input type="text" placeholder="Username" name="username" class="border border-black rounded-sm bg-gray-50 py-1 px-4 w-full" id="login-username">
-				</div>
-
-				<button name="submit" class="bg-black py-1 px-6 text-white text-center mt-4 rounded-sm">
-					Start
-				</button>
+		<div class="w-full flex flex-col justify-center items-center border border-black rounded-md shadow-md py-16 pb-28 max-w-xl">
+			<div class="mx-auto">
+				<img src="./assets/images/login.svg" alt="" width="150px">
 			</div>
+
+			<div class="mt-16 w-full px-24">
+				<input type="text" placeholder="Username" name="username" class="border border-black rounded-sm bg-gray-50 py-1 px-4 w-full" id="login-username">
+			</div>
+
+			<button type="button" class="bg-black py-1 px-6 text-white text-center mt-4 rounded-sm" id="login-button">
+				Start
+			</button>
+		</div>
 	</div>
 	<div class="absolute top-0 right-0 -z-50">
 		<img src="./assets/images/overlay_1.png" alt="" width="200px">
@@ -53,8 +53,8 @@
 		<img src="./assets/images/overlay_2.png" alt="" width="200px">
 	</div>
 
-
-	<script src="./assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="./assets/js/index.js"></script>
 </body>
 
 </html>
