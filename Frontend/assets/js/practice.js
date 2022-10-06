@@ -89,7 +89,7 @@ function updateScore(username, wordsPerMinute) {
 
 function getRandomText() {
   const textBox = document.getElementById("text-box");
-  fetch("https://api.quotable.io/random")
+  fetch("https://api.quotable.io/random?maxLength=120&tags=technology")
     .then((res) => res.json())
     .then((json) => (textBox.innerText = json.content));
 }

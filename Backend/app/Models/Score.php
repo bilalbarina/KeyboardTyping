@@ -9,7 +9,7 @@ class Score extends Model
 {
     // use HasFactory;
 
-    protected $table = 'scores';
+    protected $table = 'leaderboard';
 
     protected $fillable = [
         'username', 'score'

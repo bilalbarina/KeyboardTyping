@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('scores', function (Blueprint $table) {
+        Schema::create('leaderboard', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
             $table->integer('words_per_minute')->default(0);
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scores');
+        Schema::dropIfExists('leaderboard');
     }
 };
