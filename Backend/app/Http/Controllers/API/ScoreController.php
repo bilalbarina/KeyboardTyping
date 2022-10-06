@@ -45,10 +45,11 @@ class ScoreController extends Controller
             ], 406);
         }
 
-        Score::create([
-            'username' => Str::lower($request->get('username'))
-        ]);
-
+        if (Score::where('username', $request->get('username'))->get()->count() == 0) {
+            Score::create([
+                'username' => Str::lower($request->get('username'))
+            ]);
+        }
         return response()->json(['success' => true]);
     }
 }

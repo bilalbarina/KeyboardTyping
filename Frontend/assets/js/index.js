@@ -1,5 +1,7 @@
 const apiEndpoint = "http://localhost:8000/api/";
 document.getElementById("login-button").addEventListener("click", function () {
+  document.getElementById("loading-button").classList.remove('hidden')
+  document.getElementById("login-button").classList.add('hidden')
   const username = document.getElementById("login-username").value;
   if (username) {
     $.ajax(apiEndpoint + "create-score", {
