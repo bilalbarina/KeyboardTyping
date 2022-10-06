@@ -52,4 +52,12 @@ class ScoreController extends Controller
         }
         return response()->json(['success' => true]);
     }
+
+    protected function leaderboard()
+    {
+        $scores = Score::orderBy('words_per_minute', 'desc')->get()->take(5);
+        return response()->json([
+            'scores' => $scores
+        ]);
+    }
 }

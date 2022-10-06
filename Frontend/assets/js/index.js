@@ -12,7 +12,7 @@ document.getElementById("login-button").addEventListener("click", function () {
       accepts: "json",
       success: () => {
         window.localStorage.setItem("username", username);
-        window.location.href = "practice.php";
+        window.location.href = "/Frontend/practice.php";
       },
       error: (res) => alert(res.responseJSON.error),
     });

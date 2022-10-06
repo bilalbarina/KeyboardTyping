@@ -1,6 +1,6 @@
 const apiEndpoint = "http://localhost:8000/api/";
 const username = window.localStorage.getItem("username");
-const timerLimit = 10;
+const timerLimit = 60;
 var typedText = "";
 var wordsPerMinute = 0;
 
@@ -79,7 +79,7 @@ window.onload = () => {
 
 function updateScore(username, wordsPerMinute) {
   $.ajax(apiEndpoint + "update-score", {
-    method: "POST",
+    method: "PUT",
     data: {
       username: username,
       words_per_minute: wordsPerMinute,
@@ -99,3 +99,28 @@ function countWords(str) {
   console.log(arr.filter((word) => word !== "").length);
   return arr.filter((word) => word !== "").length;
 }
+
+function showLeaderboard() {
+	$.ajax(apiEndpoint + "leaderboard", {
+	  jsonp: true,
+	  success: (data) => {
+		let leaderboardList = document.getElementById("leaderboard-list");
+		leaderboardList.innerHTML = "";
+		console.log(data.scores)
+		Object.values(data.scores).forEach((score) => {
+		  leaderboardList.innerHTML += `<li class="px-4 py-1 text-center border border-black rounded-md flex justify-between w-full">
+		  <div>
+			  ${score.username}
+		  </div>
+		  <div>
+			  ${score.words_per_minute 	}
+		  </div>
+	  </li>`;
+		});
+		if (data.scores.length == 0) {
+		  leaderboardList.innerText = 'No score yet';
+		}
+	  },
+	});
+	document.getElementById("leaderboard-modal").classList.remove("hidden");
+  }

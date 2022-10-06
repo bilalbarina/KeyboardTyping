@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::controller(ScoreController::class)->group(function() {
+    Route::get('/leaderboard', 'leaderboard')->name('score.leaderboard');
+    Route::put('/update-score', 'update')->name('score.update');
     Route::post('/create-score', 'create')->name('score.create');
-    Route::post('/update-score', 'update')->name('score.update');
 });
