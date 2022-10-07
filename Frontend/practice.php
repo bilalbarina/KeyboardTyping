@@ -25,7 +25,7 @@
 			},
 		};
 	</script>
-	<link rel="stylesheet" href="/Frontend/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 	<div class="container py-16 px-20 xl:px-60">
 		<div class="flex flex-col justify-center items-center">
 			<div class="mx-auto">
-				<img src="/Frontend/assets/images/heading.svg" alt="" width="300px">
+				<img src="/assets/images/heading.svg" alt="" width="300px">
 			</div>
 			<div class="relative w-full mt-6">
 				<div class="absolute left-0 top-0 border-r border-b border-black py-1 px-4 text-sm inline-flex items-center space-x-1 cursor-pointer" onclick="showLeaderboard()">
@@ -142,26 +142,26 @@
 	</div>
 
 	<div class="absolute top-0 right-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_1.png" alt="" width="200px">
+		<img src="/assets/images/overlay_1.png" alt="" width="200px">
 	</div>
 	<div class="absolute top-12 right-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_4.png" alt="" width="200px">
+		<img src="/assets/images/overlay_4.png" alt="" width="200px">
 	</div>
 	<div class="absolute top-6 left-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_3.png" alt="" width="200px">
+		<img src="/assets/images/overlay_3.png" alt="" width="200px">
 	</div>
 	<div class="absolute top-60 left-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_5.png" alt="" width="130px">
+		<img src="/assets/images/overlay_5.png" alt="" width="130px">
 	</div>
 	<div class="absolute bottom-0 left-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_2.png" alt="" width="200px">
+		<img src="/assets/images/overlay_2.png" alt="" width="200px">
 	</div>
 	<div class="absolute bottom-0 right-0 -z-50">
-		<img src="/Frontend/assets/images/overlay_6.png" alt="" width="200px">
+		<img src="/assets/images/overlay_6.png" alt="" width="200px">
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-	<script src="/Frontend/assets/js/practice.js"></script>
+	<script src="/assets/js/practice.js"></script>
 </body>
 
 </html>

@@ -12,6 +12,7 @@ class LeaderboardController extends Controller
 {
     protected function update(Request $request)
     {
+        // Make new custom validation
         $validation =  Validator::make($request->input(), [
             'username' => ['required', 'string', 'exists:leaderboard,username'],
             'words_per_minute' => ['required', 'integer', 'max:200']
@@ -24,11 +25,14 @@ class LeaderboardController extends Controller
             ], 406);
         }
 
-        $score = Leaderboard::where('username', Str::lower($request->get('username')));
-        $score->update([
-            'words_per_minute' => $request->get('words_per_minute')
-        ]);
+        $leaderboard = Leaderboard::where('username', Str::lower($request->get('username')));
 
+        // Update score only if score greater than current one
+        if ($request->get('words_per_minute') > $leaderboard->first()->words_per_minute) {
+            $leaderboard->update([
+                'words_per_minute' => $request->get('words_per_minute')
+            ]);
+        }
         return response()->json(['success' => true]);
     }
 
